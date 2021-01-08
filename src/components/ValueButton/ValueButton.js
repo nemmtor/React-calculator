@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const ValueButton = ({ value }) => {
-  return <button>{value}</button>;
+export const ValueButton = ({ value, colSpan }) => {
+  return <button className={`col-span-${colSpan}`}>{value}</button>;
 };

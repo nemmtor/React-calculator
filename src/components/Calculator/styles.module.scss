@@ -1,11 +1,12 @@
 .calculator {
-
+  border: 2px solid blue;
 }
 
 .calculator__output {
-
+  min-height: 10rem;
 }
 
 .calculator__buttons {
-
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }

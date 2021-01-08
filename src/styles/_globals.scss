@@ -4,3 +4,7 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
+
+.col-span-2 {
+  grid-column: span 2;
+}
