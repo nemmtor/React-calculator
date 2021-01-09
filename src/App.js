@@ -1,25 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Calculator, OperationButton, ValueButton } from './components';
+import { Calculator, Button, ResetButton, OutputButton, NegationButton } from './components';
+import { outputContext } from './outputContext'
+
 
 function App() {
-  return (<Calculator>
-    <ValueButton value={7} />
-    <ValueButton value={8} />
-    <ValueButton value={9} />
-    <OperationButton operator={"X"} />
-    <ValueButton value={4} />
-    <ValueButton value={5} />
-    <ValueButton value={6} />
-    <OperationButton operator={"-"} />
-    <ValueButton value={1} />
-    <ValueButton value={2} />
-    <ValueButton value={3} />
-    <OperationButton operator={"+"} />
-    <ValueButton value={0} colSpan={2} />
-    <OperationButton operator={"."} />
-    <OperationButton operator={"="} />
-  </Calculator>);
+  const [output, setOutput] = useState(0);
+  const [currentInput, setCurrentInput] = useState();
+  const [error, setError] = useState();
+
+
+  return (
+    <outputContext.Provider
+      value={{ currentInput, setCurrentInput, setOutput, output, error, setError }}>
+      <Calculator>
+        <ResetButton value="AC" variant="light" />
+        <NegationButton value="+/-" variant="light" />
+        <Button value="%" variant="light" />
+        <Button value="/" variant="orange" />
+        <Button value="7" />
+        <Button value="8" />
+        <Button value="9" />
+        <Button value="X" variant="orange" />
+        <Button value="4" />
+        <Button value="5" />
+        <Button value="6" />
+        <Button value="-" variant="orange" />
+        <Button value="1" />
+        <Button value="2" />
+        <Button value="3" />
+        <Button value="+" variant="orange" />
+        <Button value="0" colSpan={2} smallRadius />
+        <Button value="." />
+        <OutputButton value="=" variant="orange" />
+      </Calculator>
+    </outputContext.Provider>
+  );
 }
 
 export default App;

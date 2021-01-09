@@ -1,3 +1,5 @@
 export { Calculator } from './Calculator';
-export { ValueButton } from './ValueButton';
-export { OperationButton } from './OperationButton';
+export { Button } from './Button';
+export { ResetButton } from './ResetButton';
+export { OutputButton } from './OutputButton';
+export { NegationButton } from './NegationButton';
